@@ -1,0 +1,30 @@
+.job {
+  &__wrapper {
+    width: 400px;
+    padding: 10rem 2rem;
+    background-color: $white;
+  }
+  &__header {
+    margin-bottom: 4.5rem;
+    h3 {
+      font-size: 2.75rem;
+      line-height: 4.5rem;
+    }
+    p {
+      position: relative;
+      top: -5px;
+    }
+  }
+  &__content {
+    display: flex;
+    margin-bottom: 4.5rem;
+  }
+  &__content-item {
+    width: 50%;
+    p:not(.text-muted) {
+      margin-top: 0.5rem;
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+  }
+}
