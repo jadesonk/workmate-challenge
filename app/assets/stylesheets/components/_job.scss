@@ -1,6 +1,7 @@
 .job {
-  &__wrapper {
+  &__container {
     width: 400px;
+    height: 600px;
     padding: 10rem 2rem;
     background-color: $white;
   }
@@ -12,7 +13,7 @@
     }
     p {
       position: relative;
-      top: -5px;
+      top: -6px;
     }
   }
   &__content {
