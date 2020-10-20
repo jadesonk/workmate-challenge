@@ -7,7 +7,6 @@ export default class extends Controller {
   connect() {}
 
   clockIn(e) {
-    console.log('Clocking in');
     const url = "/jobs/1/clock_in"; // hardcoded job id
 
     this.errorTarget.classList.add('hidden');
@@ -24,7 +23,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         this.startTimeTarget.innerHTML = data.start_time;
         this.endTimeTarget.innerHTML = "-";
         this.btnClockInTarget.classList.add('hidden');
@@ -43,10 +41,9 @@ export default class extends Controller {
   }
 
   clockOut(e) {
-    console.log("Clocking out");
     const url = "/jobs/1/clock_out"; // hardcoded job id
     // get shift id to determine which shift to end from clockout button
-    const shift = this.btnClockOutTarget.dataset.shiftId
+    const shiftId = this.btnClockOutTarget.dataset.shiftId
 
     this.errorTarget.classList.add('hidden');
     this.btnClockOutTarget.classList.add('btn-loading');
@@ -58,11 +55,10 @@ export default class extends Controller {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ shift: { user_id: 1, job_id: 1, shift_id: shift } })
+      body: JSON.stringify({ shift: { shift_id: shiftId } })
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         this.endTimeTarget.innerHTML = data.end_time;
         this.btnClockOutTarget.classList.add('hidden');
         this.btnClockOutTarget.classList.remove('btn-loading');

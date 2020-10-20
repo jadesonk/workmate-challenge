@@ -28,7 +28,8 @@ class ShiftsController < ApplicationController
     @shift = Shift.find(shift_params[:shift_id].to_i)
     @shift.end_time = Time.zone.now
 
-    # Check if current shift has already started, if not raise an error
+    # Check if user's current shift has already started, if not raise an error
+    # a user cannot clock out without having already clocked in
     if @shift.start_time.nil?
       raise ActionController::BadRequest.new(), "An error occured. Please try again."
     elsif @shift.save

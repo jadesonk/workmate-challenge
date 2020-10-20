@@ -1,4 +1,8 @@
-<div class="job__container" data-controller="job">
+<div
+  class="job__container"
+  data-controller="job"
+  data-job-id="<%= @job.id %>"
+>
   <div class="job__header">
     <h3><%= @job.title %></h3>
     <p><%= @user.name %></p>
