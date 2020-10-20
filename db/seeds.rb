@@ -1,5 +1,6 @@
 puts "START SEED"
 
+Shift.destroy_all
 User.destroy_all
 Job.destroy_all
 

@@ -4,7 +4,7 @@ after cloning the project into a folder run the following commands in your termi
 
 $ bundle install
 $ yarn install
-$ rails db:migrate db:seed
+$ rails db:drop db:create db:migrate db:seed
 
 To get the server running on localhost:3000
 $ rails s
