@@ -1,5 +1,8 @@
 puts "START SEED"
 
+User.destroy_all
+Job.destroy_all
+
 puts "Create user name John"
 User.create(name: "John")
 
